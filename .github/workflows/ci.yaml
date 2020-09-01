@@ -1,0 +1,12 @@
+on: push
+
+name: ci
+
+jobs:
+  ci:
+    runs-on: windows-latest
+    steps:
+      - run: |
+          wsl --help
+          
+          wsl -l -v
