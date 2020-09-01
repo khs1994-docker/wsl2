@@ -10,3 +10,7 @@ jobs:
           wsl --help
           
           wsl -l -v
+          
+          wsl uname -a
+          
+          wsl -d ubuntu
