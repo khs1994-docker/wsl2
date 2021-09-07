@@ -28,6 +28,7 @@ jobs:
       - uses: Vampire/setup-wsl@v1
       - run: wsl -l -v
       - run: wsl --status
+        continue-on-error: true
       - run: wsl --update
         continue-on-error: true
       - run: wsl --set-version debian 2
