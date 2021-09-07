@@ -30,8 +30,12 @@ jobs:
       - run: pwd
         shell: powershell
       - run: |
+          $GITHUB_RELEASE = "github.com"
+          $kernelversion='5.13.0'
+          curl.exe -fL https://${GITHUB_RELEASE}/khs1994/WSL2-Linux-Kernel/releases/download/${kernelversion}-microsoft-standard-WSL2/kernel-${kernelversion}-microsoft-standard-WSL2.img -O 
           echo '[wsl2]' > ~/.wslconfig
-          echo 'kernel=' >> ~/.wslconfig
+          echo "kernel=D:\\a\\wsl2\\wsl2\\kernel-${kernelversion}-microsoft-standard-WSL2.img" >> ~/.wslconfig
+          ls ~/.wslconfig
           cat ~/.wslconfig
         shell: powershell
       - run: wsl --status
