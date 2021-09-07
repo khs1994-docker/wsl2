@@ -27,6 +27,13 @@ jobs:
         continue-on-error: true  
       - uses: Vampire/setup-wsl@v1
       - run: wsl -l -v
+      - run: pwd
+        shell: powershell
+      - run: |
+          echo '[wsl2]' > ~/.wslconfig
+          echo 'kernel=' >> ~/.wslconfig
+          cat ~/.wslconfig
+        shell: powershell
       - run: wsl --status
         continue-on-error: true
       - run: wsl --update
