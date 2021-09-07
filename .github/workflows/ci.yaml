@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os:
-        - latest
+        # - latest
         - 2022
     steps:
       - run: |
@@ -24,3 +24,7 @@ jobs:
           get-command bash
           
           $PSVersionTable
+      - uses: Vampire/setup-wsl@v1
+      - run: |
+          wsl -l -v
+          wsl --set-version debian 2
