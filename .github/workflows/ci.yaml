@@ -24,6 +24,7 @@ jobs:
           get-command bash
           
           $PSVersionTable
+        continue-on-error: true  
       - uses: Vampire/setup-wsl@v1
       - run: |
           wsl -l -v
