@@ -26,6 +26,9 @@ jobs:
           $PSVersionTable
         continue-on-error: true  
       - uses: Vampire/setup-wsl@v1
-      - run: |
-          wsl -l -v
-          wsl --set-version debian 2
+      - run: wsl -l -v
+      - run: wsl --status
+      - run: wsl --update
+        continue-on-error: true
+      - run: wsl --set-version debian 2
+        continue-on-error: true
